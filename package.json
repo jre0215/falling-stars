@@ -1,21 +1,18 @@
 {
   "name": "falling-stars",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Glowing stars fall from the sky and burst into sparks when they hit the ground.",
+  "private": true,
   "scripts": {
-    "build": "webpack",
-    "build:watch": "webpack --watch"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "Joshua Escamilla <joshua.escamilla@selu.edu>",
+  "homepage": "https://github.com/jre0215/falling-stars#readme",
   "license": "MIT",
+  "author": "Joshua Escamilla",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "@typescript-eslint/parser": "^4.19.0",
-    "eslint": "^7.22.0",
-    "ts-loader": "^8.0.18",
-    "typescript": "^4.2.3",
-    "webpack": "^5.27.2",
-    "webpack-cli": "^4.5.0"
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
   }
 }

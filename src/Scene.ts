@@ -49,12 +49,12 @@ export class Scene {
         const randomX: number = Math.floor(Math.random() * this.context.canvas.width);
         const randomY: number = -Math.floor(Math.random() * (this.context.canvas.height / 4));
         const radius: number = getRandomIntBetween(newFallingStarMinRadius,
-                                                   newFallingStarMaxRadius);
+            newFallingStarMaxRadius);
         // Generate an angle between 17pi/12 and 19pi/12
         const randomAngle: number = (Math.PI * (17 / 12)) + (Math.random() * (Math.PI / 6));
 
         return new Star(this.context, randomX, randomY, radius, fallingStarInitialVelocity,
-                        randomAngle, fallingStarGravity, this.sparks);
+            randomAngle, fallingStarGravity, this.sparks);
     }
 
     private generateRandomPointsForFixedStars(): Point[] {
@@ -70,7 +70,7 @@ export class Scene {
             let usePoint = true;
             for (const existingPoint of points) {
                 if (getDistanceBetweenPoints(existingPoint, randomPoint) <
-                        minDistanceBetweenFixedStars) {
+                    minDistanceBetweenFixedStars) {
                     usePoint = false;
                     break;
                 }
@@ -111,7 +111,6 @@ export class Scene {
         this.fallingStars = this.fallingStars.filter(
             (star: Star) => star.radius >= existingFallingStarMinRadius);
         // Remove sparks that are too old
-        // eslint-disable-next-line no-constant-condition
         while (true) {
             let removedSpark = false;
             for (let i = 0; i < this.sparks.length; i++) {
@@ -139,7 +138,7 @@ export class Scene {
         this.context.fillStyle = groundColor;
         this.context.shadowBlur = 0;
         this.context.fillRect(0, this.context.canvas.height - groundHeight + 1,
-                              this.context.canvas.width, groundHeight);
+            this.context.canvas.width, groundHeight);
 
         for (const star of this.fallingStars) {
             star.draw();
