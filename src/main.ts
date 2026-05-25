@@ -1,3 +1,5 @@
+import "./style.css";
+
 import { Scene } from "./Scene";
 
 const canvas: HTMLCanvasElement = document.querySelector("canvas")!;
